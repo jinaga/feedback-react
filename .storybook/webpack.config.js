@@ -14,6 +14,15 @@ module.exports = ({ config }) => {
       }
     ]
   })
-  config.resolve.extensions.push('.ts', '.tsx')
+  config.module.rules.push({
+    test: /\.scss$/,
+    include: [SRC_PATH],
+    use: [
+      'style-loader',
+      'css-loader',
+      'sass-loader'
+    ]
+  })
+  config.resolve.extensions.push('.ts', '.tsx', '.scss')
   return config
 }

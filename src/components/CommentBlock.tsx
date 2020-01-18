@@ -13,6 +13,7 @@ export const CommentBlock = ({ self }: CommentBlockProps) => (
       <p>{ new Date().toString() }</p>
     </div>
     <p>I like where this is going. Keep it up!</p>
+    <p><a onClick={action("Show more")}>Show more</a></p>
     {
       self ?
         <a onClick={action("Edit a comment.")}>Edit</a>
