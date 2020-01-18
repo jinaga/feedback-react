@@ -1,6 +1,7 @@
-import * as React from "react";
-import { UserAvatar } from "./UserAvatar";
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
+import * as React from 'react';
+
+import { UserAvatar } from './UserAvatar';
 
 export interface CommentBlockProps {
   self: boolean;
