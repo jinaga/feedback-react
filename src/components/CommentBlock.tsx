@@ -5,20 +5,30 @@ import { UserAvatar } from './UserAvatar';
 
 export interface CommentBlockProps {
   self: boolean;
+  content: string;
 };
 
-export const CommentBlock = ({ self }: CommentBlockProps) => (
-  <div>
-    <div>
+export const CommentBlock = ({ self, content }: CommentBlockProps) => (
+  <div className="jinaga-feedback-comment-block">
+    <div className="jinaga-feedback-comment-block-info">
       <UserAvatar />
-      <p>{ new Date().toString() }</p>
+      <p>{ new Date().toLocaleTimeString() }</p>
+      <p>{ new Date().toLocaleDateString() }</p>
     </div>
-    <p>I like where this is going. Keep it up!</p>
-    <p><a onClick={action("Show more")}>Show more</a></p>
-    {
-      self ?
-        <a onClick={action("Edit a comment.")}>Edit</a>
-        : <></>
-    }
+    <div className="jinaga-feedback-comment-block-content" dangerouslySetInnerHTML={(
+      {
+        __html: content
+      }
+    )}>
+      
+    </div>
+    <div className="jinaga-feedback-comment-block-controls">
+      {
+        self ?
+          <a onClick={action("Edit a comment.")}>Edit</a>
+          : <></>
+      }
+      <a onClick={action("Show more")}>Show more</a>
+    </div>
   </div>
 )
