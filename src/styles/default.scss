@@ -48,8 +48,10 @@
   }
   .jinaga-feedback-comment-block-content {
     padding-left: 6px;
-    max-height: 200px;
-    overflow: hidden;
+    &.jinaga-feedback-comment-block-content-collapsed {
+      max-height: 200px;
+      overflow: hidden;
+    }
   }
   .jinaga-feedback-comment-block-controls {
     text-align: right;
