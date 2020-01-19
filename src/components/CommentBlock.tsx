@@ -41,14 +41,14 @@ export const CommentBlock = ({ self, content }: CommentBlockProps) => {
       <div className="jinaga-feedback-comment-block-controls">
         {
           self
-            ? <a onClick={action("Edit a comment.")}>Edit</a>
+            ? <button type="button" onClick={action("Edit a comment.")}>Edit</button>
             : <></>
         }
         {
           contentHeight > 200
-            ? <a onClick={ e => { setExpanded(!expanded); e.preventDefault(); } }>
+            ? <button type="button" onClick={ () => setExpanded(!expanded) }>
                 Show { expanded ? "less" : "more" }
-              </a>
+              </button>
             : <></>
         }
       </div>
